@@ -6,3 +6,6 @@ call plug#end()
 
 " 将系统和vim剪贴板互通
 set clipboard+=unnamed
+
+" 显示行号
+set number
