@@ -6,6 +6,10 @@ Plug 'roxma/vim-tmux-clipboard'
 " 使用fzf
 Plug '/home/chiebotgpuhq/.fzf'
 Plug 'junegunn/fzf.vim'
+" 文件管理器
+Plug 'scrooloose/nerdtree'
+" python缩进显示
+Plug 'Yggdroot/indentLine'
 call plug#end()
 
 " 将系统和vim剪贴板互通
