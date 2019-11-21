@@ -13,7 +13,7 @@ function shortwd() {
 }
 # 添加git分支显示
 function git_branch() {
-    git symbolic-ref HEAD --short
+    git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3
 }
 
 function _fish_collapsed_pwd() {
