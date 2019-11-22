@@ -8,6 +8,23 @@ COLOR_BLUE="\033[0;34m"
 COLOR_WHITE="\033[0;37m"
 COLOR_RESET="\033[0m"
 
+# 系统语言是英文用这个
+#function git_color() {
+#    local git_status="$(git status 2> /dev/null)"
+#        if [[ ! $git_status =~ "working tree clean" ]]; then
+#            if [[ $git_status =~ "No commits yet" ]]; then
+#                echo -e $COLOR_YELLOW
+#            else
+#                echo -e $COLOR_RED
+#            fi
+#        elif [[ $git_status =~ "working tree clean" ]]; then
+#            echo -e $COLOR_GREEN
+#        else
+#            echo -e $COLOR_OCHRE
+#        fi  
+#}
+    
+
 function git_color() {
 local git_status="$(git status 2> /dev/null)"
     if [[ ! $git_status =~ "干净的工作区" ]]; then
