@@ -52,7 +52,10 @@ set listchars=tab:>-,trail:-
 set laststatus=2
 " 显示光标当前位置
 set ruler
-
+" 基于缩进进行代码折叠
+set foldmethod=indent
+" 启动 Vim 时关闭折叠
+set nofoldenable
 
 " >>> 性能设置 <<<------------------------------------------------------
 " 使vimrc配置立即生效
