@@ -12,6 +12,17 @@ Plug 'scrooloose/nerdtree'
 " python缩进显示
 Plug 'Yggdroot/indentLine'
 call plug#end()
+" >>> 插件设置 <<<----------------------------------------------------
+"" PowerLine设置
+"" powerline的安装路径，可能需要自行调整
+"set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/ 
+"" 设置vim状态栏数量为2，用于显示powerline的内容
+"set laststatus=2  
+"" 始终显示窗口上头的tabline
+"set showtabline=2 
+"" Hide the default mode text (e.g. -- INSERT -- below the statusline)
+"set noshowmode    
+"set t_Co=256
 
 " >>> 功能设置 <<<-----------------------------------------------------
 
