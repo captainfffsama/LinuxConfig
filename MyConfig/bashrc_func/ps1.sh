@@ -24,15 +24,33 @@ COLOR_RESET="\033[0m"
 #    fi
 #}
 
+#function git_branch() {
+#    local git_status="$(git status 2> /dev/null)"
+#    local on_branch="On branch ([^${IFS}]*)"
+#    local on_commit="HEAD detached at ([^${IFS}]*)"
+#   
+#    if [[ $git_status =~ $on_branch ]]; then
+#        local branch=${BASH_REMATCH[1]}
+#        echo "($branch)"
+#    elif [[ $git_status =~ $on_commit ]]; then
+#        local commit=${BASH_REMATCH[1]}
+#        echo "($commit)"
+#    fi
+#}
+
 function git_branch() {
     local git_status="$(git status 2> /dev/null)"
-    local on_branch="On branch ([^${IFS}]*)"
-    local on_commit="HEAD detached at ([^${IFS}]*)"
-   
+    local on_branch="位于分支 ([^${IFS}]*)"
+    local on_commit="HEAD 目前位于 ([^${IFS}]*)"
+    local on_detach="头指针分离于 ([^${IFS}]*)"   
+
     if [[ $git_status =~ $on_branch ]]; then
         local branch=${BASH_REMATCH[1]}
         echo "($branch)"
     elif [[ $git_status =~ $on_commit ]]; then
+        local commit=${BASH_REMATCH[1]}
+        echo "($commit)"
+    elif [[ $git_status =~ $on_detach ]]; then
         local commit=${BASH_REMATCH[1]}
         echo "($commit)"
     fi
@@ -106,7 +124,7 @@ function _fish_collapsed_pwd() {
 function changeps(){
     PS1="\[$COLOR_PINK\]\$(_fish_collapsed_pwd)"
     PS1+="\[\$(git_color)\]"
-    PS1+=" [\$(git_branch)]"
+    PS1+=" \$(git_branch)"
     PS1+="\[$COLOR_BLUE\]\$\[$COLOR_RESET\] "
     export PS1
     conda activate base
