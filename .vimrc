@@ -1,3 +1,4 @@
+" >>> 插件管理 <<<---------------------------------------------------
 " 使用vim-plug管理vim插件
 call plug#begin('~/.vim/plugged')
 " 解决tmux和vim复制粘贴
@@ -12,7 +13,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 call plug#end()
 
-" --------------------------------------------------------------------
+" >>> 功能设置 <<<-----------------------------------------------------
 
 " 将系统和vim剪贴板互通
 set clipboard+=unnamed
@@ -25,9 +26,9 @@ set termencoding=utf-8
 set encoding=utf-8
 
 " 突出显示当前行
-set cursorline
+" set cursorline
 " 突出显示当前列
-set cursorcolumn
+" set cursorcolumn
 " 启用鼠标
 set mouse=a
 set selection=exclusive
@@ -53,9 +54,13 @@ set laststatus=2
 set ruler
 
 
-" -------------------------------------------------------------------
+" >>> 性能设置 <<<------------------------------------------------------
 " 使vimrc配置立即生效
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 " 打开文件类型检测
 filetype plugin indent on
 
+" >>> 按键映射 <<<-----------------------------------------------------
+" === 功能映射 ===
+" 将ctrl+s映射为保存文件
+map <C-S> :w<CR>
