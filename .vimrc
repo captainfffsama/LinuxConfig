@@ -49,7 +49,7 @@ set paste
 set listchars=tab:>-,trail:-
 " 显示状态栏和光标当前位置
 " 总是显示状态栏
-set laststatus=2
+" set laststatus=2
 " 显示光标当前位置
 set ruler
 " 基于缩进进行代码折叠
