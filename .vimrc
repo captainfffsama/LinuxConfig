@@ -11,6 +11,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'scrooloose/nerdtree'
 " python缩进显示
 Plug 'Yggdroot/indentLine'
+" dracula主题
+Plug 'dracula/vim', { 'as': 'dracula' }
 call plug#end()
 " >>> 插件设置 <<<----------------------------------------------------
 "" PowerLine设置
