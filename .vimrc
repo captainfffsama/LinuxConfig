@@ -27,14 +27,14 @@ call plug#end()
 " >>> 功能设置 <<<-----------------------------------------------------
 
 " 将系统和vim剪贴板互通
-set clipboard+=unnamed
+set clipboard+=unnamedplus
 " 显示行号
 set number
 
 " 设置编码,支持中文乱码
-set fileencodings=utf-8,ucs-bom,gb18030,gbk,gb2312,cp936
-set termencoding=utf-8
-set encoding=utf-8
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1,gb2312,cp936
+" set termencoding=utf-8
+set enc=utf8
 
 " 突出显示当前行
 " set cursorline
@@ -55,7 +55,10 @@ set shiftwidth=4
 " 继承前一行的缩进方式，适用于多行注释
 set autoindent
 " 设置粘贴模式
-set paste
+" set paste " 直接这样设置在tmux中使用会导致失焦插入<F24><F25>
+" 使用F10切换粘贴模式
+set pastetoggle=<F10>
+
 " 显示空格和tab
 set listchars=tab:>-,trail:-
 " 显示状态栏和光标当前位置
