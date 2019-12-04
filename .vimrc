@@ -13,6 +13,8 @@ Plug 'scrooloose/nerdtree'
 Plug 'Yggdroot/indentLine'
 " dracula主题
 Plug 'dracula/vim', { 'as': 'dracula' }
+" sneak插件用于跳转
+Plug 'justinmk/vim-sneak'
 call plug#end()
 " >>> 插件设置 <<<----------------------------------------------------
 "" PowerLine设置
