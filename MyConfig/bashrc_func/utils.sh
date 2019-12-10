@@ -18,3 +18,10 @@ function switchcuda_temp() {
     unset NEWCUDA
 }
 
+#交互式切换conda环境
+function condaswitch() {
+	source ~/anaconda3/etc/profile.d/conda.sh
+	export CONDAENV_TEMP=`conda info -e|awk '{if(NR>2)print $0}'|fzf|awk '{print $1}'`
+	conda activate $CONDAENV_TEMP
+	unset CONDAENV_TEMP
+}
