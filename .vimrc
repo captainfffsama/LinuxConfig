@@ -17,6 +17,8 @@ Plug 'Yggdroot/indentLine'
 Plug 'dracula/vim', { 'as': 'dracula' }
 " sneak插件用于跳转
 Plug 'justinmk/vim-sneak'
+" easymotion插件用于跳转
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 " >>> 插件设置 <<<----------------------------------------------------
 "" PowerLine设置
@@ -29,6 +31,7 @@ call plug#end()
 "" Hide the default mode text (e.g. -- INSERT -- below the statusline)
 "set noshowmode    
 "set t_Co=256
+
 " >> markdown-preview 设置 <<----------------------------------------------
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
@@ -116,7 +119,7 @@ let g:mkdp_page_title = '「${name}」'
 " 将系统和vim剪贴板互通
 set clipboard+=unnamedplus
 " 显示行号
-set number
+set nonumber
 
 " 设置编码,支持中文乱码
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1,gb2312,cp936
@@ -165,6 +168,7 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 filetype plugin indent on
 
 " >>> 按键映射 <<<-----------------------------------------------------
+let mapleader = "\<space>"
 " === 功能映射 ===
 " 将ctrl+s映射为保存文件
 map <C-S> :w<CR>
