@@ -1,0 +1,10 @@
+% git 
+
+# show git log as graph
+git log --oneline --decorate --graph --all
+
+# show the most heavy file in repo
+git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.idx | sort -k 3 -n | tail -5 | awk '{print$1}')"
+
+# remove file in all log
+git filter-branch --force --index-filter 'git rm -rf --cached --ignore-unmatch <file_path>' --prune-empty --tag-name-filter cat -- --s

@@ -104,7 +104,7 @@ let g:mkdp_markdown_css = ''
 let g:mkdp_highlight_css = ''
 
 " use a custom port to start server or random for empty
-let g:mkdp_port = ''
+let g:mkdp_port = '8299'
 
 " preview page title
 " ${name} will be replace with the file name
@@ -169,4 +169,4 @@ filetype plugin indent on
 " 将ctrl+s映射为保存文件
 map <C-S> :w<CR>
 
-
+" === 插件快捷键 ===

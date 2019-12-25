@@ -1,0 +1,10 @@
+% gcc
+
+# list all gcc 
+ls /usr/bin/gcc*
+
+# change gcc from alternatives
+sudo update-alternatives --config gcc
+
+# change g++ from alternatives
+sudo update-alternatives --config g++

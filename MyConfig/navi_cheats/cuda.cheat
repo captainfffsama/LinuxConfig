@@ -1,0 +1,9 @@
+% cuda 
+
+# remove cuda link
+sudo rm -rf /usr/local/cuda
+
+# create new cuda link
+sudo ln -s /usr/local/<CudaName> /usr/local/cuda
+
+$ CudaName: ls /usr/local/ |grep cuda-

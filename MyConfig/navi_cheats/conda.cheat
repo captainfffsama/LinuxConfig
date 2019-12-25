@@ -1,0 +1,7 @@
+% conda
+
+# conda activate env
+source activate <env>
+
+$ env: conda info -e|awk '{if(NR>2)print $1}'
+

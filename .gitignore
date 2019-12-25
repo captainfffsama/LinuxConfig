@@ -3,4 +3,5 @@
 !.tmux.conf.local
 !MyConfig/bashrc_func/*
 !.gitignore
-
+!.config/alacritty/alacritty.yml
+!MyConfig/navi_cheats/*

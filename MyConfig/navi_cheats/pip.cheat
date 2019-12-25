@@ -1,0 +1,9 @@
+% pip
+
+# set pip source to tinghua
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+# set pip source to default
+pip config unset global.index-url
+
+

@@ -1,0 +1,4 @@
+% other
+
+# show cursor
+echo -e "\033[?25h"
