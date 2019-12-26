@@ -130,8 +130,8 @@ set enc=utf8
 " set cursorline
 " 突出显示当前列
 " set cursorcolumn
-" 启用鼠标
-set mouse=a
+" 启用鼠标 设置为a启用鼠标，设置为v可以将鼠标赋值内容到剪切板
+set mouse=v
 set selection=exclusive
 set selectmode=mouse,key
 " 显示括号匹配
