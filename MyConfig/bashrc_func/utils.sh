@@ -25,3 +25,10 @@ function condaswitch() {
 	conda activate $CONDAENV_TEMP
 	unset CONDAENV_TEMP
 }
+
+#交互式进入当前目录下的第一层子目录
+function cdd() {
+	export DIR_TEMP=`ls -l|rg "^d"|awk '{print $NF}'|fzf`
+	cd $DIR_TEMP
+	unset DIR_TEMP
+}
