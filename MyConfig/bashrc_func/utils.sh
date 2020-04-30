@@ -42,6 +42,7 @@ function condachannel2qh() {
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
     conda config --set show_channel_urls yes
+	conda clean -i
 }
 
 #切换conda下载源到中科大
@@ -55,12 +56,15 @@ function condachannel2zkd() {
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/bioconda/
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/menpo/
     conda config --set show_channel_urls yes
+	conda clean -i
 }
 
 #切换conda下载源到默认
 function condachannel2default() {
 	source ~/anaconda3/etc/profile.d/conda.sh
 	conda config --remove-key channels
+    conda config --set show_channel_urls yes
+	conda clean -i
 }
 
 
