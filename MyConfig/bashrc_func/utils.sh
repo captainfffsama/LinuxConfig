@@ -29,6 +29,7 @@ function condaswitch() {
 #切换conda下载源到清华源
 function condachannel2qh() {
 	source ~/anaconda3/etc/profile.d/conda.sh
+	conda config --remove-key channels
 	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/
@@ -46,6 +47,7 @@ function condachannel2qh() {
 #切换conda下载源到中科大
 function condachannel2zkd() {
 	source ~/anaconda3/etc/profile.d/conda.sh
+	conda config --remove-key channels
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/main/
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/pkgs/free/
     conda config --add channels https://mirrors.ustc.edu.cn/anaconda/cloud/conda-forge/
