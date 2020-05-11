@@ -35,7 +35,7 @@ function condachannel2qh() {
 	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/
 	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro/
 	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/ 
+    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
     conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/simpleitk/
@@ -75,3 +75,19 @@ function cdd() {
 	cd $DIR_TEMP
 	unset DIR_TEMP
 }
+
+function _get_all_conda_env() {
+	conda info -e|awk -F"[* ]" 'NR>2 {print $1}'
+}
+function _comp_conda_env() {
+    source ~/anaconda3/etc/profile.d/conda.sh
+    local curw
+    COMPREPLY=()
+    curw=${COMP_WORDS[COMP_CWORD]}
+    COMPREPLY=($(compgen -W '`_get_all_conda_env`' -- $curw))
+    return 0
+}
+
+shopt -s progcomp
+complete -F _comp_conda_env conda activate
+
