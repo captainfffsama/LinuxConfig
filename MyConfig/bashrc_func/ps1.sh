@@ -122,7 +122,7 @@ function _fish_collapsed_pwd() {
 #export current_conda_env=$CONDA_PROMPT_MODIFIER
 # >>> 修改终端显示 <<<-------------------------------------------------------------------------------------------------
 function changeps(){
-    PS1="\[$COLOR_PINK\]\$(_fish_collapsed_pwd)"
+	PS1="${debian_chroot:+($debian_chroot)}\[$COLOR_PINK\]\$(_fish_collapsed_pwd)"
     PS1+="\[\$(git_color)\]"
     PS1+=" \$(git_branch)"
     PS1+="\[$COLOR_BLUE\]\$\[$COLOR_RESET\] "
