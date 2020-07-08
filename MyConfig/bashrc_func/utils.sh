@@ -29,19 +29,21 @@ function condaswitch() {
 #切换conda下载源到清华源
 function condachannel2qh() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	conda config --remove-key channels
-	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
-	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r/
-	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/pro/
-	conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/conda-forge/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/msys2/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/pytorch/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/simpleitk/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/bioconda/
-    conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/menpo/
-    conda config --set show_channel_urls yes
+	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/.condarc_qh ~/.condarc
+	conda clean -i
+}
+
+#切换conda下载源到北外（推荐）
+function condachannel2bw() {
+	source ~/anaconda3/etc/profile.d/conda.sh
+	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/.condarc_bw ~/.condarc
+	conda clean -i
+}
+
+# 切换conda下载源到上交
+function condachannel2sj() {
+	source ~/anaconda3/etc/profile.d/conda.sh
+	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/.condarc_sj ~/.condarc
 	conda clean -i
 }
 
