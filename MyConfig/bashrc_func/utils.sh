@@ -29,21 +29,21 @@ function condaswitch() {
 #切换conda下载源到清华源
 function condachannel2qh() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/.condarc_qh ~/.condarc
+	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/condarc_qh ~/.condarc
 	conda clean -i
 }
 
 #切换conda下载源到北外（推荐）
 function condachannel2bw() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/.condarc_bw ~/.condarc
+	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/condarc_bw ~/.condarc
 	conda clean -i
 }
 
 # 切换conda下载源到上交
 function condachannel2sj() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/.condarc_sj ~/.condarc
+	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/condarc_sj ~/.condarc
 	conda clean -i
 }
 
