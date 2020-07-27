@@ -6,3 +6,4 @@
 !.config/alacritty/alacritty.yml
 !MyConfig/navi_cheats/*
 !.bashrc
+!MyConfig/bashrc_func/conda_source/

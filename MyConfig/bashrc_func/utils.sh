@@ -64,8 +64,7 @@ function condachannel2zkd() {
 #切换conda下载源到默认
 function condachannel2default() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	conda config --remove-key channels
-    conda config --set show_channel_urls yes
+	cp -f /home/chiebotgpuhq/MyConfig/bashrc_func/conda_source/condarc_default ~/.condarc
 	conda clean -i
 }
 
