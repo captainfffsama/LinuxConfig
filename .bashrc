@@ -209,6 +209,8 @@ export PATH=/home/chiebotgpuhq/MyTools:$PATH
 # >>> My own diy command <<<-------------------------------------------------------------------------------------
 alias jupyter-notebook-xyy='jupyter notebook --config /home/chiebotgpuhq/.jupyter/user_xyy_config.py'
 alias git-tree='git-foresta --all --style=10 | less -RSX'
+alias obsidian='/home/chiebotgpuhq/MyTools/Obsidian-0.8.9.AppImage'
+alias picgo='/home/chiebotgpuhq/MyTools/PicGo-2.3.0-beta.3.AppImage'
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus

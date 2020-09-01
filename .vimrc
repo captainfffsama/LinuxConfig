@@ -19,6 +19,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'justinmk/vim-sneak'
 " easymotion插件用于跳转
 Plug 'easymotion/vim-easymotion'
+" coc插件,用于支持各类语言的补全
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 " >>> 插件设置 <<<----------------------------------------------------
 "" PowerLine设置
