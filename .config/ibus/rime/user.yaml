@@ -1,9 +1,10 @@
 var:
   option:
+    ascii_punct: true
     simplification: true
   previously_selected_schema: luna_pinyin
   schema_access_time:
-    double_pinyin: 1598513312
-    luna_pinyin: 1598513324
+    double_pinyin: 1599201640
+    luna_pinyin: 1599201670
     luna_pinyin_fluency: 1598512330
     luna_pinyin_simp: 1598512341
