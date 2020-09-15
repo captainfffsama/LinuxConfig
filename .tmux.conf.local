@@ -42,7 +42,7 @@ tmux_conf_new_session_prompt=false
 # RGB 24-bit colour support (tmux >= 2.2), possible values are:
 #  - true
 #  - false (default)
-tmux_conf_theme_24b_colour=false
+tmux_conf_theme_24b_colour=true
 
 # window style
 tmux_conf_theme_window_fg='default'
@@ -314,3 +314,4 @@ set -g @resurrect-processes 'ssh'
 # 为了能用vim-tmux-clipboard
 set -g focus-events on
 
+set-option -ga terminal-overrides ',xterm-256color:Tc'
