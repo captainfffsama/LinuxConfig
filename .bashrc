@@ -204,7 +204,7 @@ source /home/chiebotgpuhq/MyConfig/bashrc_func/bashmarks/bashmarks.sh
 source "`ueberzug library`"
 # 打开笔记
 alias opennote='typora /home/chiebotgpuhq/Share/note/'
-alias xmind='/home/chiebotgpuhq/MyConfig/XMind'
+#alias xmind='/home/chiebotgpuhq/MyConfig/XMind'
 export PATH=/home/chiebotgpuhq/MyTools:$PATH
 # >>> My own diy command <<<-------------------------------------------------------------------------------------
 alias jupyter-notebook-xyy='jupyter notebook --config /home/chiebotgpuhq/.jupyter/user_xyy_config.py'
