@@ -158,7 +158,7 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 '
 export FZF_TMUX=1
-export FZF_TMUX_OPTS='-p 80%'
+#export FZF_TMUX_OPTS='-p 80%'
 
 
 eval "$(thefuck --alias)"
