@@ -21,7 +21,7 @@ function switchcuda_temp() {
 #交互式切换conda环境
 function condaswitch() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	export CONDAENV_TEMP=`conda info -e|awk '{if(NR>2)print $0}'|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
+	export CONDAENV_TEMP=`conda info -e|awk '{if(NR>2)print $0}'|fzf --height 40% --layout=reverse|awk '{print $1}'`
 	conda activate $CONDAENV_TEMP
 	unset CONDAENV_TEMP
 }
