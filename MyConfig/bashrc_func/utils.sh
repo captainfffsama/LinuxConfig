@@ -2,7 +2,7 @@
 
 #临时自动切换cuda版本
 function switchcuda_temp() {
-    NEWCUDA=`ls /usr/local/ |grep cuda-|fzf`
+	NEWCUDA=`ls /usr/local/ |grep cuda-|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
     PATHBAK=$PATH
     PATHBAKK=`echo $PATHBAK|sed "s/cuda[-0-9.]*/$NEWCUDA/g"`
     export PATH=$PATHBAKK
@@ -21,7 +21,7 @@ function switchcuda_temp() {
 #交互式切换conda环境
 function condaswitch() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	export CONDAENV_TEMP=`conda info -e|awk '{if(NR>2)print $0}'|fzf|awk '{print $1}'`
+	export CONDAENV_TEMP=`conda info -e|awk '{if(NR>2)print $0}'|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
 	conda activate $CONDAENV_TEMP
 	unset CONDAENV_TEMP
 }
@@ -72,7 +72,7 @@ function condachannel2default() {
 
 #交互式进入当前目录下的第一层子目录
 function cdd() {
-	export DIR_TEMP=`ls -l|rg "^d"|awk '{print $NF}'|fzf`
+	export DIR_TEMP=`ls -l|rg "^d"|awk '{print $NF}'|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
 	cd $DIR_TEMP
 	unset DIR_TEMP
 }

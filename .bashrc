@@ -140,7 +140,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-
+# >>> fzf 设置 <<< -----------------------------------------------------------------------------------------------------
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 # 这行配置开启 ag 查找隐藏文件 及忽略 .git 文件
 #export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -l -g ""'
@@ -150,13 +150,16 @@ unset __conda_setup
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow -g "!{.git,node_modules}/*" 2> /dev/null'
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+#export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
 
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 --color=dark
 --color=fg:-1,bg:-1,hl:#5fff87,fg+:-1,bg+:-1,hl+:#ffaf5f
 --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
 '
+export FZF_TMUX=1
+export FZF_TMUX_OPTS='-p 80%'
+
 
 eval "$(thefuck --alias)"
 export EDITOR=/usr/bin/vim
