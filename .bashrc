@@ -154,7 +154,7 @@ export FZF_DEFAULT_COMMAND='rg --color always --files --no-ignore --hidden --fol
 
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
-export FZF_DEFAULT_OPTS=" --tiebreak=index --ansi --border --tiebreak=index --ansi --border --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
+export FZF_DEFAULT_OPTS=" --tiebreak=index --ansi --border --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'"
 
 #export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS"
 #--height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'
