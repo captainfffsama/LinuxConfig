@@ -168,7 +168,7 @@ export FZF_DEFAULT_OPTS=" --tiebreak=index --ansi --border --preview '(highlight
 
 
 eval "$(thefuck --alias)"
-export EDITOR=/usr/bin/vim
+export EDITOR=/usr/bin/nvim
 
 HISTTIMEFORMAT="%F %T "
 export HISTTIMEFORMAT
