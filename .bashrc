@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# >>> 激活辅助函数脚本 <<<-----------------------------------
+# >>> 激活辅助函数脚本 必须放在conda初始化之前 <<<-----------------------------------
 source /home/chiebotgpuhq/MyConfig/bashrc_func/ps1.sh
 PS1="${debian_chroot:+($debian_chroot)}\[$COLOR_PINK\]\$(_fish_collapsed_pwd)"
 PS1+="\[\$(git_color)\]"
@@ -213,12 +213,11 @@ source /home/chiebotgpuhq/MyConfig/bashrc_func/bashmarks/bashmarks.sh
 source "`ueberzug library`"
 # 打开笔记
 alias opennote='typora /home/chiebotgpuhq/Share/note/'
-#alias xmind='/home/chiebotgpuhq/MyConfig/XMind'
+alias xmind='/home/chiebotgpuhq/MyConfig/XMind'
 export PATH=/home/chiebotgpuhq/MyTools:$PATH
 # >>> My own diy command <<<-------------------------------------------------------------------------------------
 alias jupyter-notebook-xyy='jupyter notebook --config /home/chiebotgpuhq/.jupyter/user_xyy_config.py'
 alias git-tree='git-foresta --all --style=10 | less -RSX'
-alias obsidian='/home/chiebotgpuhq/MyTools/Obsidian-0.8.9.AppImage'
 alias picgo='/home/chiebotgpuhq/MyTools/PicGo-2.3.0-beta.3.AppImage'
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
