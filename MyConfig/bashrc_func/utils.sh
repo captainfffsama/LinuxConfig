@@ -2,28 +2,25 @@
 
 #临时自动切换cuda版本
 function switchcuda_temp() {
-	NEWCUDA=`ls /usr/local/ |grep cuda-|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
-    PATHBAK=$PATH
-    PATHBAKK=`echo $PATHBAK|sed "s/cuda[-0-9.]*/$NEWCUDA/g"`
-    export PATH=$PATHBAKK
-    LD_LIBRARY_PATHBAK=$LD_LIBRARY_PATH
-    LD_LIBRARY_PATHBAKK=`echo $LD_LIBRARY_PATHBAK|sed "s/cuda[-0-9.]*/$NEWCUDA/g"`
-    export LD_LIBRARY_PATH=$LD_LIBRARY_PATHBAKK
-    LIBRARY_PATHBAK=$LIBRARY_PATH
-    LIBRARY_PATHBAKK=`echo $LIBRARY_PATHBAK|sed "s/cuda[-0-9.]*/$NEWCUDA/g"`
-    export LIBRARY_PATH=$LIBRARY_PATHBAKK
-    unset PATHBAK
-    unset LD_LIBRARY_PATHBAK
-    unset LIBRARY_PATHBAK
-    unset NEWCUDA
+	local new_cuda=`ls /usr/local/ |grep cuda-|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
+    local path_bak=$PATH
+    local path_bakk=`echo $path_bak|sed "s/cuda[-0-9.]*/$new_cuda/g"`
+    export PATH=$path_bakk
+	
+	local ld_library_path_bak=$LD_LIBRARY_PATH
+	local ld_library_path_bakk=`echo $LD_LIBRARY_PATHBAK|sed "s/cuda[-0-9.]*/$NEWCUDA/g"`
+    export LD_LIBRARY_PATH=$ld_library_path_bakk
+
+	local library_path_bak=$LIBRARY_PATH
+	local library_path_bakk=`echo $LIBRARY_PATHBAK|sed "s/cuda[-0-9.]*/$NEWCUDA/g"`
+    export LIBRARY_PATH=$library_path_bakk
 }
 
 #交互式切换conda环境
 function condaswitch() {
 	source ~/anaconda3/etc/profile.d/conda.sh
-	export CONDAENV_TEMP=`conda info -e|awk '{if(NR>2)print $0}'|fzf --height 40% --layout=reverse|awk '{print $1}'`
-	conda activate $CONDAENV_TEMP
-	unset CONDAENV_TEMP
+	local condaenv_tmp=`conda info -e|awk '{if(NR>2)print $0}'|fzf --height 40% --layout=reverse|awk '{print $1}'`
+	conda activate $condaenv_tmp
 }
 
 #切换conda下载源到清华源
@@ -68,13 +65,36 @@ function condachannel2default() {
 	conda clean -i
 }
 
+# >>> PATH处理 <<< -------------------------------------------------
+pathrm () {                                                                      
+  local IFS=':'                                                                  
+  local newpath                                                                  
+  local dir                                                                      
+  local pathvar=${2:-PATH}                                                       
+  for dir in ${!pathvar} ; do                                                    
+    if [ "$dir" != "$1" ] ; then                                                 
+      newpath=${newpath:+$newpath:}$dir                                          
+    fi                                                                           
+  done                                                                           
+  export $pathvar="$newpath"                                                        
+}
 
+pathprepend () {                                                                 
+  pathrm $1 $2                                                                   
+  local pathvar=${2:-PATH}                                                       
+  export $pathvar="$1${!pathvar:+:${!pathvar}}"                                  
+}
+
+pathappend () {                                                                    
+  pathrm $1 $2                                                                   
+  local pathvar=${2:-PATH}                                                       
+  export $pathvar="${!pathvar:+${!pathvar}:}$1"                                  
+} 
 
 #交互式进入当前目录下的第一层子目录
 function cdd() {
-	export DIR_TEMP=`ls -l|rg "^d"|awk '{print $NF}'|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
-	cd $DIR_TEMP
-	unset DIR_TEMP
+	local dir_tmp=`ls -l|rg "^d"|awk '{print $NF}'|fzf --height 40% --layout=reverse --preview '(highlight -O ansi {} || cat {}) 2> /dev/null | head -500'`
+	cd $dir_tmp
 }
 
 function _get_all_conda_env() {

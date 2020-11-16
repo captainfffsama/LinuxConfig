@@ -223,3 +223,10 @@ export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export PATH=/opt/foxitsoftware/foxitreader/FoxitReader:$PATH
+
+# >>> 末尾处理 <<<-----------------------------------------------------------------------------------
+# 去除路径中的重复路径
+export PATH=$( python -c "import os; path = os.environ['PATH'].split(':'); print(':'.join(sorted(set(path), key=path.index)))" )
+export LD_LIBRARY_PATH=$( python -c "import os; path = os.environ['LD_LIBRARY_PATH'].split(':'); print(':'.join(sorted(set(path), key=path.index)))" )
+export LIBRARY_PATH=$( python -c "import os; path = os.environ['LIBRARY_PATH'].split(':'); print(':'.join(sorted(set(path), key=path.index)))" )
+export PKG_CONFIG_PATH=$( python -c "import os; path = os.environ['PKG_CONFIG_PATH'].split(':'); print(':'.join(sorted(set(path), key=path.index)))" )
