@@ -6,3 +6,4 @@
 !.bashrc
 !MyConfig/bashrc_func/conda_source/
 !/home/chiebotgpuhq/.config/ibus/rime/*.yaml
+!/home/chiebotgpuhq/.config/starship.toml
