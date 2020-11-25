@@ -40,9 +40,8 @@ symbol = " "
 symbol = " "
 
 [git_status]
-ahead = "⇡${count}(yellow)"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-behind = "⇣${count}(yellow)"
+ahead = "[⇡${count}](yellow)"
+behind = "[⇣${count}](yellow)"
 
 [golang]
 symbol = " "
