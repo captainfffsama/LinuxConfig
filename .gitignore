@@ -5,5 +5,5 @@
 !MyConfig/navi_cheats/*
 !.bashrc
 !MyConfig/bashrc_func/conda_source/
-!/home/chiebotgpuhq/.config/ibus/rime/*.yaml
-!/home/chiebotgpuhq/.config/starship.toml
+!.config/ibus/rime/*.yaml
+!.config/starship.toml
