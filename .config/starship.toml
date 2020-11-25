@@ -40,8 +40,8 @@ symbol = " "
 symbol = " "
 
 [git_status]
-ahead = "[⇡${count}](yellow)"
-behind = "[⇣${count}](yellow)"
+ahead = "⇡${count}(yellow)"
+behind = "⇣${count}(yellow)"
 
 [golang]
 symbol = " "
