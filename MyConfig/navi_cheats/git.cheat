@@ -8,3 +8,10 @@ git rev-list --objects --all | grep "$(git verify-pack -v .git/objects/pack/*.id
 
 # remove file in all log
 git filter-branch --force --index-filter 'git rm -rf --cached --ignore-unmatch <file_path>' --prune-empty --tag-name-filter cat -- --s
+
+# set git proxy socks5
+git config --global http.https://github.com.proxy socks5://127.0.0.1:7890
+
+# unset git proxy socks5
+git config --global --unset http.https://github.com.proxy
+

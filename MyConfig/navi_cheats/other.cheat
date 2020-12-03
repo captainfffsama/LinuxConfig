@@ -2,7 +2,3 @@
 
 # show cursor
 echo -e "\033[?25h"
-# set git proxy
-git config --global http.proxy 'http://127.0.0.1:7890'
-# unset git proxy
-git config --global unset http.proxy
