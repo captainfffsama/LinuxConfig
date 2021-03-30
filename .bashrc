@@ -182,8 +182,14 @@ export NAVI_PATH="/opt/navi/cheats:/home/chiebotgpuhq/MyConfig/navi_cheats"
 export PKG_CONFIG_PATH=/home/chiebotgpuhq/MyCode/3rd/opencv344/opencv/build/installed/lib/pkgconfig:$PKG_CONFIG_PATH
 export LD_LIBRARY_PATH=/home/chiebotgpuhq/MyCode/3rd/opencv344/opencv/build/installed/lib/pkgconfig:$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda/bin:$PATH 
+export PATH=/usr/bin/ruby:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
+
+export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/openvino/lib/intel64/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/openvino/ngraph/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/opencv_vino/lib/:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/openvino/external/tbb/lib/:$LD_LIBRARY_PATH
 
 # 屏蔽ctrl+s的功能
 stty -ixon
@@ -222,7 +228,7 @@ alias picgo='/home/chiebotgpuhq/MyTools/PicGo-2.3.0-beta.3.AppImage'
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-export PATH=/opt/foxitsoftware/foxitreader/FoxitReader:$PATH
+#export PATH=$PATH
 
 # >>> 末尾处理 <<<-----------------------------------------------------------------------------------
 # 去除路径中的重复路径
