@@ -179,17 +179,18 @@ export NAVI_PATH="/opt/navi/cheats:/home/chiebotgpuhq/MyConfig/navi_cheats"
 
 
 # >>> My add bashrc <<<---------------------------------------------------------------------------------------------
-export PKG_CONFIG_PATH=/home/chiebotgpuhq/MyCode/3rd/opencv344/opencv/build/installed/lib/pkgconfig:$PKG_CONFIG_PATH
-export LD_LIBRARY_PATH=/home/chiebotgpuhq/MyCode/3rd/opencv344/opencv/build/installed/lib/pkgconfig:$LD_LIBRARY_PATH
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
 export PATH=/usr/local/cuda/bin:$PATH 
 export PATH=/usr/bin/ruby:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/cuda/lib64
+# gcc  头文件搜索路径,建议自己项目在cmake中指明
+export C_INCLUDE_PATH=$C_INCLUDE_PATH
+# g++ 头文件搜索路径,建议自己项目在cmake中指明
+export CPLUS_INCLUDE_PATH=$CPLUS_INCLUDE_PATH
+source ~/PATHFIX.sh
 
-export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/openvino/lib/intel64/:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/openvino/ngraph/lib/:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/opencv_vino/lib/:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=$HOME/MyCode/dev_third_tools/3rd/openvino/external/tbb/lib/:$LD_LIBRARY_PATH
 
 # 屏蔽ctrl+s的功能
 stty -ixon
