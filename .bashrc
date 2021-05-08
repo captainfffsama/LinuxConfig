@@ -212,24 +212,25 @@ trash()
 }
 # >>> 添加辅助脚本 <<< -------------------------------------------------------------------------------
 # 自己加的一些辅助功能脚本
-source /home/chiebotgpuhq/MyConfig/bashrc_func/utils.sh
+source $HOME/MyConfig/bashrc_func/utils.sh
 # z是一个跳转工具
-source /home/chiebotgpuhq/MyTools/z/z.sh 
+source $HOME/MyTools/z/z.sh 
 # bashmakrs一个跳转工具
-source /home/chiebotgpuhq/MyConfig/bashrc_func/bashmarks/bashmarks.sh
+source $HOME/MyConfig/bashrc_func/bashmarks/bashmarks.sh
 source "`ueberzug library`"
 # 打开笔记
-alias opennote='typora /home/chiebotgpuhq/Share/note/'
-alias xmind='/home/chiebotgpuhq/MyConfig/XMind'
-export PATH=/home/chiebotgpuhq/MyTools:$PATH
+alias opennote='typora ~/Share/note/'
+export PATH=$HOME/MyTools:$PATH
+export PATH=$HOME/go/bin/:$PATH
 # >>> My own diy command <<<-------------------------------------------------------------------------------------
 alias jupyter-notebook-xyy='jupyter notebook --config /home/chiebotgpuhq/.jupyter/user_xyy_config.py'
 alias git-tree='git-foresta --all --style=10 | less -RSX'
-alias picgo='/home/chiebotgpuhq/MyTools/PicGo-2.3.0-beta.3.AppImage'
+alias picgo='~/MyTools/PicGo-2.3.0-beta.3.AppImage'
 export GTK_IM_MODULE=ibus
 export QT_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
-#export PATH=$PATH
+# export PATH=$PATH
+# export ALL_PROXY="socks5://127.0.0.1:7890"
 
 # >>> 末尾处理 <<<-----------------------------------------------------------------------------------
 # 去除路径中的重复路径
